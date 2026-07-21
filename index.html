@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>몽글몽글 시아월드 🐰🩵 SIA PROFILE</title>
+    
+    <!-- Dynamic Favicon based on SOOP Station Avatar -->
+    <link id="favicon-link" class="rounded-full" rel="icon" href="https://stimg.afreecatv.com/LOGO/si/sia030/sia030.jpg">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Pretendard & Noto Sans KR -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
+                        cute: ['Fredoka', 'Pretendard', 'sans-serif']
+                    },
+                    colors: {
+                        siaSky: {
+                            50: '#F0F7FF',
+                            100: '#E0F0FE',
+                            200: '#BAE0FD',
+                            300: '#7CC2FA',
+                            DEFAULT: '#4DA8F5',
+                            500: '#2B8CE6',
+                            600: '#1A6EC0',
+                            dark: '#0F4882',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Pretendard', 'Noto Sans KR', sans-serif; }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F0F7FF; }
+        .dark ::-webkit-scrollbar-track { background: #0F172A; }
+        ::-webkit-scrollbar-thumb { background: #7CC2FA; border-radius: 9999px; border: 2px solid #F0F7FF; }
+        .dark ::-webkit-scrollbar-thumb { background: #2B8CE6; border: 2px solid #0F172A; }
+        ::-webkit-scrollbar-thumb:hover { background: #4DA8F5; }
+        
+        .click-bounce {
+            transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .click-bounce:hover {
+            transform: translateY(-3px) scale(1.02);
+        }
+        .click-bounce:active {
+            transform: translateY(1px) scale(0.98);
+        }
+
+        @keyframes bunnyHop {
+            0%, 100% { transform: translateY(0) scale(1, 1); }
+            30% { transform: translateY(-8px) scale(0.95, 1.05); }
+            50% { transform: translateY(0) scale(1.05, 0.95); }
+            70% { transform: translateY(-3px) scale(0.98, 1.02); }
+        }
+        .bunny-hop {
+            animation: bunnyHop 2s infinite ease-in-out;
+        }
+
+        @keyframes jelly {
+            0%, 100% { transform: scale(1, 1); }
+            25% { transform: scale(0.92, 1.08); }
+            50% { transform: scale(1.06, 0.94); }
+            75% { transform: scale(0.97, 1.03); }
+        }
+        .jelly-profile:hover {
+            animation: jelly 0.6s ease-in-out;
+        }
+
+        .sparkle-particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1;
+            animation: descend linear forwards;
+        }
+        @keyframes descend {
+            to { transform: translateY(105vh) rotate(360deg); }
+        }
+
+        /* Checkered transparent background preview for PNGs */
+        .png-transparent-bg {
+            background-image: linear-gradient(45deg, #e5e7eb 25%, transparent 25%), 
+                              linear-gradient(-45deg, #e5e7eb 25%, transparent 25%), 
+                              linear-gradient(45deg, transparent 75%, #e5e7eb 75%), 
+                              linear-gradient(-45deg, transparent 75%, #e5e7eb 75%);
+            background-size: 16px 16px;
+            background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+        }
+        .dark .png-transparent-bg {
+            background-image: linear-gradient(45deg, #1e293b 25%, transparent 25%), 
+                              linear-gradient(-45deg, #1e293b 25%, transparent 25%), 
+                              linear-gradient(45deg, transparent 75%, #1e293b 75%), 
+                              linear-gradient(-45deg, transparent 75%, #1e293b 75%);
+        }
+    </style>
+</head>
+<body class="bg-[#F4F9FF] dark:bg-[#0B1120] text-[#1E293B] dark:text-[#F1F5F9] font-sans antialiased min-h-screen flex flex-col transition-colors duration-300 relative overflow-x-hidden">
+
+    <!-- Ambient Floating Particles -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0 opacity-70 dark:opacity-40" id="ambient-bg-effects"></div>
+
+    <!-- Header Navigation Bar -->
+    <header class="bg-white/90 dark:bg-[#0F172A]/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-siaSky-200 dark:border-siaSky-600/30 transition-colors duration-300">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Mascot & Title -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex items-center gap-2 group transition-all">
+                        <span class="text-2xl group-hover:rotate-12 transition-transform duration-300 inline-block">🐰</span>
+                        <span class="text-siaSky-600 dark:text-siaSky-300 font-extrabold text-xl tracking-tight font-cute">HAN SIA</span>
+                        <span class="text-xs bg-siaSky-100 text-siaSky-600 dark:bg-siaSky-500/20 dark:text-siaSky-200 px-2.5 py-0.5 rounded-full font-bold border border-siaSky-200 dark:border-siaSky-500/30">몽글이 🩵</span>
+                    </a>
+                </div>
+                
+                <!-- Navigation Items -->
+                <nav class="hidden md:flex space-x-3 items-center font-bold text-sm">
+                    <a href="#profile" class="text-slate-600 dark:text-slate-300 hover:text-siaSky-600 dark:hover:text-siaSky-300 px-3 py-1.5 rounded-xl hover:bg-siaSky-50 dark:hover:bg-slate-800 transition-all">프로필</a>
+                    <a href="#notice" class="text-slate-600 dark:text-slate-300 hover:text-siaSky-600 dark:hover:text-siaSky-300 px-3 py-1.5 rounded-xl hover:bg-siaSky-50 dark:hover:bg-slate-800 transition-all">공지사항 📢</a>
+                    <a href="#sigpoong" class="text-slate-600 dark:text-slate-300 hover:text-siaSky-600 dark:hover:text-siaSky-300 px-3 py-1.5 rounded-xl hover:bg-siaSky-50 dark:hover:bg-slate-800 transition-all">시그풍 🎈</a>
+                    <a href="#monthly-bangsell" class="text-slate-600 dark:text-slate-300 hover:text-siaSky-600 dark:hover:text-siaSky-300 px-3 py-1.5 rounded-xl hover:bg-siaSky-50 dark:hover:bg-slate-800 transition-all">이달의 방셀 🖼️</a>
+                    <a href="#mongsil" class="text-slate-600 dark:text-slate-300 hover:text-siaSky-600 dark:hover:text-siaSky-300 px-3 py-1.5 rounded-xl hover:bg-siaSky-50 dark:hover:bg-slate-800 transition-all">몽실이 업보판 📜</a>
+                    
+                    <div class="h-4 w-[1px] bg-slate-200 dark:bg-slate-700 mx-1"></div>
+                    
+                    <!-- Dark Mode Button -->
+                    <button id="theme-toggle" class="text-slate-500 dark:text-slate-300 hover:bg-siaSky-100 dark:hover:bg-slate-800 p-2 rounded-xl transition-all click-bounce" title="테마 변경">
+                        <i class="fa-solid fa-moon text-base text-siaSky-600 dark:text-siaSky-300"></i>
+                    </button>
+
+                    <!-- Prominent Top-Right Admin Lock Button (Requirement #5) -->
+                    <button onclick="openAdminLoginModal()" id="header-admin-btn" class="bg-siaSky-100 dark:bg-slate-800 text-siaSky-600 dark:text-siaSky-300 hover:bg-siaSky dark:hover:bg-siaSky-600 hover:text-white px-3 py-1.5 rounded-xl font-bold text-xs flex items-center gap-1.5 transition-all border border-siaSky-200 dark:border-slate-700 click-bounce">
+                        <i class="fa-solid fa-key text-xs"></i>
+                        <span id="admin-status-text">관리자 인증</span>
+                    </button>
+                </nav>
+                
+                <!-- Mobile Navigation Button -->
+                <div class="md:hidden flex items-center gap-1">
+                    <button onclick="openAdminLoginModal()" class="text-siaSky-600 dark:text-siaSky-300 p-2 rounded-xl hover:bg-siaSky-100 dark:hover:bg-slate-800" title="관리자">
+                        <i class="fa-solid fa-key text-base"></i>
+                    </button>
+                    <button id="mobile-theme-toggle" class="text-slate-500 dark:text-slate-300 hover:bg-siaSky-100 dark:hover:bg-slate-800 p-2 rounded-xl transition-all">
+                        <i class="fa-solid fa-moon text-base"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-slate-600 dark:text-slate-300 focus:outline-none p-2 rounded-xl hover:bg-siaSky-100 dark:hover:bg-slate-800">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-[#0F172A] border-t border-siaSky-100 dark:border-slate-800">
+            <div class="px-4 pt-2 pb-4 space-y-1 font-bold text-sm">
+                <a href="#profile" class="block text-slate-700 dark:text-slate-200 hover:bg-siaSky-50 dark:hover:bg-slate-800 hover:text-siaSky-600 px-4 py-2.5 rounded-xl">프로필</a>
+                <a href="#notice" class="block text-slate-700 dark:text-slate-200 hover:bg-siaSky-50 dark:hover:bg-slate-800 hover:text-siaSky-600 px-4 py-2.5 rounded-xl">공지사항 📢</a>
+                <a href="#sigpoong" class="block text-slate-700 dark:text-slate-200 hover:bg-siaSky-50 dark:hover:bg-slate-800 hover:text-siaSky-600 px-4 py-2.5 rounded-xl">시그풍 🎈</a>
+                <a href="#monthly-bangsell" class="block text-slate-700 dark:text-slate-200 hover:bg-siaSky-50 dark:hover:bg-slate-800 hover:text-siaSky-600 px-4 py-2.5 rounded-xl">이달의 방셀 🖼️</a>
+                <a href="#mongsil" class="block text-slate-700 dark:text-slate-200 hover:bg-siaSky-50 dark:hover:bg-slate-800 hover:text-siaSky-600 px-4 py-2.5 rounded-xl">몽실이 업보판 📜</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10 relative z-10">
+
+        <!-- 1. Profile Section -->
+        <section id="profile" class="scroll-mt-20 flex flex-col gap-6">
+            
+            <div class="bg-white dark:bg-[#0F172A] rounded-3xl shadow-lg shadow-siaSky-100/50 dark:shadow-none border border-siaSky-200 dark:border-siaSky-500/20 overflow-hidden transition-all duration-300">
+                <!-- Sky Blue Gradient Cover Banner -->
+                <div class="h-36 sm:h-56 w-full relative overflow-hidden bg-gradient-to-r from-siaSky-100 via-sky-200 to-sky-300 dark:from-slate-800 dark:via-siaSky-900 dark:to-slate-900">
+                    <img id="profile-banner-img" src="" 
+                         onerror="this.style.display='none'" 
+                         class="w-full h-full object-cover absolute inset-0" alt="한시아 배너">
+                    <div class="absolute inset-0 bg-black/5 dark:bg-black/20"></div>
+                </div>
+                
+                <div class="px-6 sm:px-8 pb-6 flex flex-col sm:flex-row relative">
+                    <!-- Profile Avatar: Round Image (Requirement #2) -->
+                    <div class="-mt-16 sm:-mt-24 mb-4 sm:mb-0 sm:mr-6 flex-shrink-0 flex justify-center sm:block relative z-10">
+                        <div class="relative group">
+                            <img id="avatar-display" class="h-32 w-32 sm:h-40 sm:w-40 rounded-full border-4 border-white dark:border-[#0F172A] shadow-md object-cover bg-siaSky-100 jelly-profile cursor-pointer" 
+                                 src="https://stimg.afreecatv.com/LOGO/si/sia030/sia030.jpg" 
+                                 onerror="this.src='https://placehold.co/400x400/BAE0FD/0F4882?text=SIA'" 
+                                 alt="한시아 아바타">
+                            <div class="absolute bottom-0 right-1 bg-siaSky text-white rounded-full p-2 text-xs shadow-md border-2 border-white dark:border-[#0F172A]">
+                                🐰
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Main Text Info -->
+                    <div class="pt-2 sm:pt-4 flex-grow text-center sm:text-left flex flex-col sm:justify-between">
+                        <div>
+                            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 mb-2 font-bold">
+                                <span class="bg-siaSky-100 text-siaSky-600 dark:bg-siaSky-500/20 dark:text-siaSky-300 px-3 py-1 rounded-full text-xs border border-siaSky-200 dark:border-siaSky-500/30">
+                                    <i class="fa-solid fa-gamepad text-[10px] mr-1"></i> 소통 & 종합게임
+                                </span>
+                                <span class="bg-sky-400 text-white dark:bg-siaSky-600 px-3 py-1 rounded-full text-xs font-extrabold shadow-sm">
+                                    <i class="fa-solid fa-heart text-[10px] mr-1"></i> 버추얼 스트리머
+                                </span>
+                            </div>
+                            
+                            <!-- Modified Tagline (Requirement #3) -->
+                            <p class="text-sm font-extrabold text-siaSky-600 dark:text-siaSky-300 mb-1">“몽글몽글 행복한 시간🐰🩵”</p>
+                            
+                            <h1 class="text-3xl font-black text-slate-900 dark:text-white mb-3 flex flex-wrap items-center justify-center sm:justify-start gap-2 font-cute">
+                                한시아
+                                <span class="text-sm text-slate-400 dark:text-slate-400 font-normal tracking-tight">HAN SIA 🐰</span>
+                            </h1>
+                            
+                            <!-- Badges (Removed Symbol Badge - Requirement #4) -->
+                            <div class="flex flex-wrap justify-center sm:justify-start gap-2 mb-5 text-xs font-bold">
+                                <span class="px-3 py-1 bg-siaSky-50 dark:bg-slate-800 text-siaSky-600 dark:text-siaSky-300 rounded-xl border border-siaSky-200/60 dark:border-slate-700">🎉 데뷔일: 2025.12.03</span>
+                                <span class="px-3 py-1 bg-siaSky-50 dark:bg-slate-800 text-siaSky-600 dark:text-siaSky-300 rounded-xl border border-siaSky-200/60 dark:border-slate-700">🎂 생일: 03월 26일</span>
+                                <span class="px-3 py-1 bg-siaSky text-white dark:bg-siaSky-600 rounded-xl shadow-xs">☁️ 팬닉: 몽글이</span>
+                            </div>
+                        </div>
+
+                        <!-- Platform Button -->
+                        <div class="flex justify-center sm:justify-start gap-2.5">
+                            <a id="profile-soop-link" href="https://www.sooplive.com/station/sia030" target="_blank" class="px-4 py-2 rounded-xl bg-siaSky text-white font-extrabold text-xs flex items-center gap-2 hover:bg-siaSky-500 transition-all hover:scale-105 shadow-md click-bounce" title="SOOP 방송국">
+                                <i class="fa-solid fa-tv"></i> SOOP 방송국 가기
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Self Intro & D-Day Grid -->
+            <div id="introduce" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Self Intro Card -->
+                <div class="bg-white dark:bg-[#0F172A] rounded-2xl shadow-sm border border-siaSky-200 dark:border-siaSky-500/20 p-6 transition-colors duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="flex items-center gap-2 text-lg font-bold text-siaSky-600 dark:text-siaSky-300 font-cute">
+                                <span class="text-xl">🐰</span> 한시아 자기소개
+                            </h3>
+                            <button id="admin-profile-edit-btn" onclick="openProfileEditModal()" class="hidden text-slate-400 hover:text-siaSky transition-colors p-1" title="프로필 수정">
+                                <i class="fa-solid fa-pen-to-square text-sm"></i>
+                            </button>
+                        </div>
+                        <p id="profile-intro-text" class="text-slate-700 dark:text-slate-200 text-sm leading-relaxed mb-5 whitespace-pre-wrap font-medium"></p>
+                    </div>
+                    <div id="profile-tags-container" class="flex flex-wrap gap-1.5 pt-3 border-t border-siaSky-100 dark:border-slate-800"></div>
+                </div>
+
+                <!-- D-Days Tracker Card -->
+                <div class="bg-white dark:bg-[#0F172A] rounded-2xl shadow-sm border border-siaSky-200 dark:border-siaSky-500/20 p-6 transition-colors duration-300 flex flex-col justify-between">
+                    <div>
+                        <h3 class="flex items-center gap-2 text-lg font-bold text-siaSky-600 dark:text-siaSky-300 mb-4 font-cute">
+                            <i class="fa-regular fa-calendar-check text-siaSky"></i> 실시간 D-Day 카운터
+                        </h3>
+                        <div id="dday-container" class="space-y-3"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- 2. Notice Section -->
+        <section id="notice" class="scroll-mt-20">
+            <div class="bg-white dark:bg-[#0F172A] rounded-3xl shadow-md border border-siaSky-200 dark:border-siaSky-500/20 p-6 transition-colors duration-300">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6 border-b border-siaSky-100 dark:border-slate-800 pb-4">
+                    <div>
+                        <div class="text-siaSky-600 dark:text-siaSky-300 font-extrabold tracking-widest text-[10px] mb-1">
+                            SIA NOTICE BOARD
+                        </div>
+                        <h2 class="text-2xl font-black text-slate-900 dark:text-white tracking-tight font-cute flex items-center gap-2">
+                            <span>📢</span> 방송 공지사항
+                        </h2>
+                    </div>
+                    <button id="admin-add-notice-btn" onclick="openNoticeModal()" class="hidden items-center gap-1.5 bg-siaSky text-white hover:bg-siaSky-500 px-4 py-2.5 rounded-xl text-xs font-black shadow-sm transition-all click-bounce">
+                        <i class="fa-solid fa-plus"></i> 공지 신규 작성
+                    </button>
+                </div>
+
+                <div id="notices-list-container" class="space-y-4"></div>
+            </div>
+        </section>
+
+        <!-- 3. Signature Balloons -->
+        <section id="sigpoong" class="scroll-mt-20">
+            <div class="bg-white dark:bg-[#0F172A] rounded-3xl shadow-md border border-siaSky-200 dark:border-siaSky-500/20 p-6 transition-colors duration-300">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6 border-b border-siaSky-100 dark:border-slate-800 pb-4">
+                    <div>
+                        <h2 class="text-2xl font-black text-slate-900 dark:text-white tracking-tight font-cute flex items-center gap-2">
+                            <span>🎈</span> 시아의 시그풍 리스트
+                        </h2>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">풍선 개수별 리액션과 맞춤 이미지(배경 없는 PNG 등록 지원) 안내입니다.</p>
+                    </div>
+                    <button id="admin-add-sig-btn" onclick="openSigModal()" class="hidden items-center gap-1.5 bg-siaSky text-white hover:bg-siaSky-500 px-4 py-2.5 rounded-xl text-xs font-black shadow-sm transition-all click-bounce">
+                        <i class="fa-solid fa-plus"></i> 시그풍 추가
+                    </button>
+                </div>
+
+                <div id="sigpoong-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"></div>
+            </div>
+        </section>
+
+        <!-- 4. This Month's Bangsell -->
+        <section id="monthly-bangsell" class="scroll-mt-20">
+            <div class="bg-white dark:bg-[#0F172A] rounded-3xl shadow-md border border-siaSky-200 dark:border-siaSky-500/20 p-6 transition-colors duration-300">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6 border-b border-siaSky-100 dark:border-slate-800 pb-4">
+                    <div>
+                        <h2 class="text-2xl font-black text-slate-900 dark:text-white tracking-tight font-cute flex items-center gap-2">
+                            <span>🖼️</span> 이달의 방셀
+                        </h2>
+                    </div>
+                    <button id="admin-add-gallery-btn" onclick="openGalleryModal()" class="hidden items-center gap-1.5 bg-siaSky text-white hover:bg-siaSky-500 px-4 py-2.5 rounded-xl text-xs font-black shadow-sm transition-all click-bounce">
+                        <i class="fa-solid fa-plus"></i> 방셀 이미지 추가
+                    </button>
+                </div>
+
+                <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5"></div>
+            </div>
+        </section>
+
+        <!-- 5. Mongsil Karma Board -->
+        <section id="mongsil" class="scroll-mt-20">
+            <div class="bg-white dark:bg-[#0F172A] rounded-3xl shadow-md border border-siaSky-200 dark:border-siaSky-500/20 p-6 transition-colors duration-300">
+                
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-4 border-b border-siaSky-100 dark:border-slate-800 pb-4">
+                    <div>
+                        <div class="text-siaSky-600 dark:text-siaSky-300 font-extrabold tracking-widest text-[10px] mb-1">
+                            MONGSIL KARMA & OUTFIT WORKLIST
+                        </div>
+                        <h2 class="text-2xl font-black text-slate-900 dark:text-white tracking-tight font-cute flex items-center gap-2">
+                            <span>📜</span> 몽실이 업보판
+                        </h2>
+                    </div>
+                    <div class="flex items-center gap-3 text-xs font-bold">
+                        <div id="loading-indicator" class="hidden text-siaSky animate-pulse">동기화 중... 🩵</div>
+                        <div class="bg-siaSky-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-3 py-1.5 rounded-xl border border-siaSky-200 dark:border-slate-700">
+                            업데이트: <span id="homework-sync-date"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search & Controls -->
+                <div class="flex flex-col sm:flex-row gap-3 mb-6">
+                    <div class="relative flex-grow">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <i class="fa-solid fa-magnifying-glass text-slate-400 text-sm"></i>
+                        </div>
+                        <input type="text" id="homework-search" class="w-full bg-siaSky-50/50 dark:bg-slate-800/60 border border-siaSky-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 text-sm rounded-xl focus:ring-2 focus:ring-siaSky block pl-11 p-3 outline-none font-bold" placeholder="닉네임으로 내 업보/방셀 검색하기...">
+                    </div>
+                    
+                    <button id="admin-add-user-btn" onclick="openAddUserModal()" class="hidden items-center justify-center bg-siaSky text-white hover:bg-siaSky-500 font-extrabold py-3 px-5 rounded-xl transition-colors whitespace-nowrap shadow-sm text-sm click-bounce">
+                        <i class="fa-solid fa-user-plus mr-2 text-xs"></i>명부 및 항목 추가
+                    </button>
+                </div>
+
+                <div id="homework-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"></div>
+
+            </div>
+        </section>
+
+        <!-- Admin Login Modal (Pin: 121412) -->
+        <div id="admin-login-modal" class="fixed inset-0 z-[110] flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+            <div class="bg-white dark:bg-[#0F172A] rounded-2xl shadow-2xl w-11/12 max-w-sm p-6 transform scale-95 transition-all duration-300 border border-siaSky-200 dark:border-slate-700">
+                <h3 class="text-lg font-bold text-siaSky-600 dark:text-white mb-2 font-cute">
+                    <i class="fa-solid fa-lock text-siaSky mr-1.5"></i> 관리인 비밀번호 입력
+                </h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mb-4 font-semibold">설정된 비밀번호 6자리를 입력하여 편집 기능을 잠금해제합니다.</p>
+                <input type="password" id="admin-pin" class="w-full bg-siaSky-50 dark:bg-slate-800 border border-siaSky-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 rounded-xl focus:ring-2 focus:ring-siaSky p-3 mb-4 outline-none text-center tracking-widest font-black text-lg" placeholder="••••••" maxlength="6">
+                <div class="flex justify-end gap-2 text-xs font-bold">
+                    <button onclick="closeAdminLoginModal()" class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200">취소</button>
+                    <button onclick="checkAdminPin()" class="px-4 py-2 rounded-xl bg-siaSky text-white hover:bg-siaSky-500">인증하기</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notice Modal -->
+        <div id="notice-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+            <div class="bg-white dark:bg-[#0F172A] rounded-2xl shadow-2xl w-11/12 max-w-md p-6 transform scale-95 transition-all duration-300 border border-siaSky-200 dark:border-slate-700">
+                <div class="flex justify-between items-center mb-4 border-b border-siaSky-100 dark:border-slate-800 pb-3">
+                    <h3 class="text-lg font-bold text-siaSky-600 dark:text-white font-cute flex items-center gap-2">
+                        <span>📢</span> 공지사항 작성
+                    </h3>
+                    <button onclick="closeNoticeModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+                </div>
+                <div class="space-y-4 text-xs font-bold">
+                    <div>
+                        <label class="block text-slate-600 dark:text-slate-300 mb-1.5">공지 제목</label>
+                        <input type="text" id="notice-title" class="w-full bg-siaSky-50 dark:bg-slate-800 border border-siaSky-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 rounded-xl p-3 outline-none" placeholder="예: [안내] 이번주 방송 일정">
+                    </div>
+                    <div>
+                        <label class="block text-slate-600 dark:text-slate-300 mb-1.5">공지 내용</label>
+                        <textarea id="notice-content" rows="4" class="w-full bg-siaSky-50 dark:bg-slate-800 border border-siaSky-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 rounded-xl p-3 outline-none resize-none" placeholder="공지 상세 내용을 입력하세요..."></textarea>
+                    </div>
+                    <div>
+                        <label class="flex items-center gap-2 text-slate-700 dark:text-slate-200 cursor-pointer">
+                            <input type="checkbox" id="notice-important" class="w-4 h-4 text-siaSky rounded border-siaSky-300">
+                            상단 고정 중요 공지로 설정
+                        </label>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end gap-2 text-xs font-bold">
+                    <button onclick="closeNoticeModal()" class="px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">취소</button>
+                    <button onclick="submitNotice()" class="px-5 py-2.5 rounded-xl bg-siaSky text-white hover:bg-siaSky-500">등록하기</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Mongsil User Modal -->
+        <div id="add-user-modal" class="fixed inset-0 z-[110] flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+            <div class="bg-white dark:bg-[#0F172A] rounded-2xl shadow-2xl w-11/12 max-w-sm p-6 transform scale-95 transition-all duration-300 border border-siaSky-200 dark:border-slate-700">
+                <div class="flex justify-between items-center mb-4 border-b border-siaSky-100 dark:border-slate-800 pb-3">
+                    <h3 class="text-lg font-bold text-siaSky-600 dark:text-white flex items-center gap-2 font-cute">
+                        <i class="fa-solid fa-user-plus text-siaSky"></i> 몽실이 명부 배정
+                    </h3>
+                    <button onclick="closeAddUserModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+                </div>
+                <div class="space-y-4 text-xs font-bold">
+                    <div>
+                        <label class="block text-slate-600 dark:text-slate-300 mb-1.5">SOOP 아이디 (프사 연동용)</label>
+                        <input type="text" id="new-user-id" class="w-full bg-siaSky-50 dark:bg-slate-800 border border-siaSky-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 rounded-xl p-3 outline-none" placeholder="예: sia030">
+                    </div>
+                    <div>
+                        <label class="block text-slate-600 dark:text-slate-300 mb-1.5">신청자 닉네임 (필수)</label>
+                        <input type="text" id="new-user-nickname" class="w-full bg-siaSky-50 dark:bg-slate-800 border border-siaSky-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 rounded-xl p-3 outline-none" placeholder="예: 몽글이1호">
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end gap-2 text-xs font-bold">
+                    <button onclick="closeAddUserModal()" class="px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">취소</button>
+                    <button onclick="submitNewUser()" class="px-4 py-2.5 rounded-xl bg-siaSky text-white hover:bg-siaSky-500">등록하기</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Homework Items Modal -->
+        <div id="homework-edit-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+            <div class="bg-white dark:bg-[#0F172A] rounded-2xl shadow-2xl w-11/12 max-w-md overflow-hidden transform scale-95 transition-all duration-300 border border-siaSky-200 dark:border-slate-700 flex flex-col max-h-[80vh]">
+                <div class="p-4 flex items-center justify-between border-b border-siaSky-100 dark:border-slate-800 bg-siaSky-50/50 dark:bg-slate-800/40">
+                    <div class="flex items-center gap-3" id="edit-modal-header"></div>
+                    <div class="flex items-center gap-2 text-xs font-bold">
+                        <button id="delete-user-confirm-btn" class="hidden bg-red-50 dark:bg-red-950/40 text-red-600 dark:text-red-400 font-bold px-2.5 py-1.5 rounded-lg hover:bg-red-100 transition-all">
+                            <i class="fa-solid fa-user-minus mr-1"></i>명부 제외
+                        </button>
+                        <button onclick="closeHomeworkEditModal()" class="text-slate-400 hover:text-white p-2"><i class="fa-solid fa-xmark text-xl"></i></button>
+                    </div>
+                </div>
+                <div class="p-4 flex-grow overflow-y-auto" id="edit-modal-body"></div>
+                <div class="p-4 border-t border-siaSky-100 dark:border-slate-800 bg-siaSky-50/30 dark:bg-slate-900">
+                    <div class="flex gap-2 text-xs font-bold">
+                        <input type="text" id="new-item-name" class="flex-grow bg-white dark:bg-slate-800 border border-siaSky-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 rounded-xl p-2.5 outline-none" placeholder="새 의상/업보 입력...">
+                        <button onclick="addNewItem()" class="bg-siaSky text-white px-4 py-2 rounded-xl hover:bg-siaSky-500 whitespace-nowrap">추가</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sigpoong Add/Edit Modal (with PNG Upload Support - Requirement #7) -->
+        <div id="sig-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+            <div class="bg-white dark:bg-[#0F172A] rounded-2xl shadow-2xl w-11/12 max-w-md p-6 transform scale-95 transition-all duration-300 border border-siaSky-200 dark:border-slate-700 max-h-[85vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-4 border-b border-siaSky-100 dark:border-slate-800 pb-3">
+                    <h3 class="text-lg font-bold text-siaSky-600 dark:text-white font-cute flex items-center gap-2">
+                        <span>🎈</span> 시그풍 항목 추가
+                    </h3>
+                    <button onclick="closeSigModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+                </div>
+                <div class="space-y-4 text-xs font-bold">
+                    <div>
+                        <label class="block text-slate-600 dark:text-slate-300 mb-1.5">풍선 개수 (예: 100)</label>
+                        <input type="number" id="sig-count" class="w-full bg-siaSky-50 dark:bg-slate-800 border border-siaSky-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 rounded-xl p-3 outline-none" placeholder="100">
+                    </div>
+                    <div>
+                        <label class="block text-slate-600 dark:text-slate-300 mb-1.5">리액션 제목</label>
+                        <input type="text" id="sig-title" class="w-full bg-siaSky-50 dark:bg-slate-800 border border-siaSky-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 rounded-xl p-3 outline-none" placeholder="예: 토끼귀 댄스 🐰">
+                    </div>
+                    <div>
+                        <label class="block text-slate-600 dark:text-slate-300 mb-1.5">상세 설명</label>
+                        <input type="text" id="sig-desc" class="w-full bg-siaSky-50 dark:bg-slate-800 border border-siaSky-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 rounded-xl p-3 outline-none" placeholder="예: 귀여운 토끼귀 착용 후 댄스!">
+                    </div>
+                    <div>
+                        <label class="block text-slate-600 dark:text-slate-300 mb-1.5">이미지 업로드 (배경 없는 PNG 파일 지원)</label>
+                        <input type="file" id="sig-image-file" accept="image/*" class="hidden" onchange="handleSigImageSelection(event)">
+                        <div onclick="document.getElementById('sig-image-file').click()" class="cursor-pointer border-2 border-dashed border-siaSky-200 dark:border-slate-700 rounded-xl p-3 text-center bg-siaSky-50/50 hover:bg-siaSky-100 transition-all">
+                            <i class="fa-solid fa-image text-siaSky text-lg block mb-1"></i>
+                            <span class="text-slate-600 dark:text-slate-300">이미지 파일 선택하기</span>
+                        </div>
+                        <div id="sig-img-preview-container" class="hidden mt-2 relative p-2 border rounded-xl png-transparent-bg flex justify-center">
+                            <img id="sig-img-preview" src="" class="max-h-32 object-contain">
+                            <button type="button" onclick="clearSigImage()" class="absolute top-1 right-1 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px]"><i class="fa-solid fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end gap-2 text-xs font-bold">
+                    <button onclick="closeSigModal()" class="px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">취소</button>
+                    <button onclick="submitSig()" class="px-5 py-2.5 rounded-xl bg-siaSky text-white hover:bg-siaSky-500">등록</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- This Month's Bangsell Add Modal (Requirement #7) -->
+        <div id="gallery-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+            <div class="bg-white dark:bg-[#0F172A] rounded-2xl shadow-2xl w-11/12 max-w-md p-6 transform scale-95 transition-all duration-300 border border-siaSky-200 dark:border-slate-700 max-h-[85vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-4 border-b border-siaSky-100 dark:border-slate-800 pb-3">
+                    <h3 class="text-lg font-bold text-siaSky-600 dark:text-white font-cute flex items-center gap-2">
+                        <span>🖼️</span> 이달의 방셀 등록
+                    </h3>
+                    <button onclick="closeGalleryModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+                </div>
+                <div class="space-y-4 text-xs font-bold">
+                    <div>
+                        <label class="block text-slate-600 dark:text-slate-300 mb-1.5">의상 / 방셀 컨셉 제목</label>
+                        <input type="text" id="gallery-title" class="w-full bg-siaSky-50 dark:bg-slate-800 border border-siaSky-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 rounded-xl p-3 outline-none" placeholder="예: 토끼 바니걸 / 파자마 세트">
+                    </div>
+                    <div>
+                        <label class="block text-slate-600 dark:text-slate-300 mb-1.5">선물 대상 몽글이 (선택)</label>
+                        <input type="text" id="gallery-target" class="w-full bg-siaSky-50 dark:bg-slate-800 border border-siaSky-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 rounded-xl p-3 outline-none" placeholder="예: 몽글이1호 님 전용">
+                    </div>
+                    <div>
+                        <label class="block text-slate-600 dark:text-slate-300 mb-1.5">방셀 이미지 등록</label>
+                        <input type="file" id="gallery-image-file" accept="image/*" class="hidden" onchange="handleGalleryImageSelection(event)">
+                        <div onclick="document.getElementById('gallery-image-file').click()" class="cursor-pointer border-2 border-dashed border-siaSky-200 dark:border-slate-700 rounded-xl p-4 text-center bg-siaSky-50/50 hover:bg-siaSky-100 transition-all">
+                            <i class="fa-solid fa-cloud-arrow-up text-siaSky text-xl block mb-1"></i>
+                            <span class="text-slate-600 dark:text-slate-300">내 컴퓨터에서 이미지 선택</span>
+                        </div>
+                        <div id="gallery-img-preview-container" class="hidden mt-2 relative p-2 border border-siaSky-200/50 rounded-xl bg-transparent flex justify-center">
+                            <img id="gallery-img-preview" src="" class="max-h-48 object-contain">
+                            <button type="button" onclick="clearGalleryImage()" class="absolute top-1 right-1 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px]"><i class="fa-solid fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end gap-2 text-xs font-bold">
+                    <button onclick="closeGalleryModal()" class="px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">취소</button>
+                    <button onclick="submitGallery()" class="px-5 py-2.5 rounded-xl bg-siaSky text-white hover:bg-siaSky-500">등록하기</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Settings Edit Modal (Requirement #2 - Unlimited Direct Banner File Upload) -->
+        <div id="profile-edit-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+            <div class="bg-white dark:bg-[#0F172A] rounded-2xl shadow-2xl w-11/12 max-w-lg overflow-hidden transform scale-95 transition-all duration-300 border border-siaSky-200 dark:border-slate-700 flex flex-col max-h-[90vh]">
+                <div class="p-4 flex items-center justify-between border-b border-siaSky-100 dark:border-slate-800 bg-siaSky-50/50 dark:bg-slate-800/40">
+                    <h3 class="text-lg font-bold text-siaSky-600 dark:text-white font-cute flex items-center gap-2">
+                        <i class="fa-solid fa-address-card text-siaSky"></i> 대표 프로필 편집
+                    </h3>
+                    <button onclick="closeProfileEditModal()" class="text-slate-400 hover:text-white p-2"><i class="fa-solid fa-xmark text-xl"></i></button>
+                </div>
+                
+                <div class="p-5 flex-grow overflow-y-auto space-y-6 text-xs font-bold">
+                    <!-- Banner Setting: File Upload Without Truncation/Limit -->
+                    <div>
+                        <h4 class="text-sm font-bold text-siaSky-600 dark:text-siaSky-300 mb-2">상단 배너 직접 업로드 (파일 크기 제한 없음)</h4>
+                        <div class="border-2 border-dashed border-siaSky-200 dark:border-slate-700 rounded-2xl p-4 text-center bg-siaSky-50/30 dark:bg-slate-900/50 mb-3">
+                            <input type="file" id="profile-banner-file" accept="image/*" class="hidden" onchange="handleBannerFileSelection(event)">
+                            
+                            <div id="banner-upload-trigger" onclick="document.getElementById('profile-banner-file').click()" class="cursor-pointer bg-siaSky hover:bg-siaSky-500 text-white font-bold py-2.5 px-4 rounded-xl inline-flex items-center gap-2 mb-2 transition-all shadow-sm">
+                                <i class="fa-solid fa-cloud-arrow-up text-sm"></i> 내 기기에서 배너 파일 업로드
+                            </div>
+                            
+                            <div id="banner-upload-preview-container" class="hidden mt-3 relative block">
+                                <img id="banner-upload-preview" src="" class="w-full max-h-36 rounded-lg shadow-sm border border-siaSky-200 object-cover">
+                                <button type="button" onclick="clearSelectedBannerFile()" class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px]"><i class="fa-solid fa-times"></i></button>
+                            </div>
+                        </div>
+                        <input type="text" id="edit-profile-banner-url" class="w-full bg-siaSky-50 dark:bg-slate-800 border border-siaSky-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 p-2.5 rounded-xl outline-none" placeholder="또는 이미지 URL 직접 입력 (https://...)">
+                    </div>
+                    <hr class="border-siaSky-100 dark:border-slate-800">
+
+                    <!-- Self intro & tags -->
+                    <div>
+                        <h4 class="text-sm font-bold text-siaSky-600 dark:text-siaSky-300 mb-2">자기소개 및 태그</h4>
+                        <textarea id="edit-profile-intro" rows="3" class="w-full bg-siaSky-50 dark:bg-slate-800 border border-siaSky-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 p-3 rounded-xl outline-none resize-none mb-2"></textarea>
+                        <label class="block text-slate-500 dark:text-slate-400 mb-1.5">태그 (쉼표로 구분)</label>
+                        <input type="text" id="edit-profile-tags" class="w-full bg-siaSky-50 dark:bg-slate-800 border border-siaSky-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 p-3 rounded-xl outline-none">
+                    </div>
+                    <hr class="border-siaSky-100 dark:border-slate-800">
+                    
+                    <!-- D-Days -->
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="text-sm font-bold text-siaSky-600 dark:text-siaSky-300">D-Day 일정 관리</h4>
+                            <button type="button" onclick="addEditDdayRow()" class="bg-siaSky-100 text-siaSky-600 dark:bg-slate-800 dark:text-siaSky-300 px-2.5 py-1 rounded-lg">
+                                + 새 일정
+                            </button>
+                        </div>
+                        <div id="edit-dday-list" class="space-y-2"></div>
+                    </div>
+                </div>
+                <div class="p-4 border-t border-siaSky-100 dark:border-slate-800 bg-siaSky-50/30 dark:bg-slate-900 flex justify-end gap-2 text-xs font-bold">
+                    <button onclick="closeProfileEditModal()" class="px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">취소</button>
+                    <button onclick="saveProfileChanges()" class="bg-siaSky text-white px-6 py-2.5 rounded-xl hover:bg-siaSky-500">저장 완료</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast-message" class="fixed bottom-6 right-6 z-[150] bg-siaSky text-white font-extrabold text-sm py-3.5 px-5 rounded-xl shadow-xl transform translate-y-20 opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2 border border-white/20">
+        <span id="toast-text">변경사항이 저장되었습니다 🐰🩵</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-10 text-center mt-auto border-t border-siaSky-200/20 space-y-1">
+        <p class="text-sm font-black text-siaSky-300 font-cute">한시아(HAN SIA) 공식 공간 🐰🩵</p>
+        <p class="text-xs text-slate-400 font-medium">© 2026 HAN SIA. All rights reserved.</p>
+    </footer>
+
+    <!-- Firebase Script & Logic -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, getDoc, setDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'sia-profile-app';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {
+            apiKey: "AIzaSyB-6yOdPjG1ApNW1JyM2f18dIKGb8bo_nc",
+            authDomain: "sia-db.firebaseapp.com",
+            projectId: "sia-db",
+            storageBucket: "sia-db.firebasestorage.app",
+            messagingSenderId: "48723001041",
+            appId: "1:48723001041:web:24ef4fa9b47cdb8d238ff0"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+
+        // Initial Data Structure
+        const defaultHomeworkData = [
+            { id: 'sia030', nickname: '한시아', items: [{ name: '몽글이 감사 방셀 🐰', count: 1 }, { name: '토끼 파자마 방셀 🤍', count: 0 }] },
+            { id: '', nickname: '열혈몽글이', items: [{ name: '사복 메이드 컨셉 방셀', count: 1 }] },
+            { id: '', nickname: '하늘구름', items: [{ name: '토끼귀 모자 세트 방셀', count: 1 }] }
+        ];
+
+        const defaultNoticeData = [
+            { id: 'not_1', title: '🐰 몽글이들 환영해요! 한시아 방송 규칙 안내', content: '1. 타 스트리머 비하 금지\n2. 과도한 훈수 및 스포일러 자제\n3. 몽글몽글 매너 채팅 부탁드립니다 🩵', isImportant: true, date: '2025.12.03' }
+        ];
+
+        const defaultSigData = [
+            { id: 'sig_100', count: 100, title: '토끼귀 애교 🐰', desc: '시아의 상큼발랄 토끼귀 뽀뽀 리액션!', image: '' },
+            { id: 'sig_333', count: 333, title: '몽글이 송 🎶', desc: '팬닉 몽글이를 위한 즉석 헌정 노래!', image: '' }
+        ];
+
+        const defaultGalleryData = [
+            { id: 'gal_1', title: '시아의 몽글몽글 토끼 파자마 방셀 🐰', target: '전체 몽글이 팬분들', image: 'https://placehold.co/600x600/BAE0FD/0F4882?text=SIA+BANGSELL+PNG' }
+        ];
+
+        const defaultProfileData = {
+            bannerUrl: "https://placehold.co/1200x400/E0F0FE/0F4882?text=HAN+SIA+Bunny+Sky+World",
+            introText: `안녕하세요! 몽글몽글 하늘빛 스트리머 한시아입니다! 🐰🩵\n\n매일 방송에서 따뜻한 소통과 재밌는 종합게임으로 찾아뵙고 있어요.\n항상 찾아와 주시는 우리 몽글이들 한 분 한 분 너무 감사드려요 ☁️✨`,
+            tags: ["한시아", "몽글이", "토끼시아", "버추얼"],
+            ddays: [
+                { title: "🎂 시아 생일 (03.26)", type: "birthday", date: "03-26" },
+                { title: "🎉 데뷔일 (2025.12.03)", type: "anniversary", date: "2025-12-03" }
+            ],
+            socials: {
+                soop: "https://www.sooplive.com/station/sia030"
+            }
+        };
+
+        // State variables
+        let globalHomeworkData = [];
+        let globalNoticeData = [];
+        let globalSigData = [];
+        let globalGalleryData = [];
+        let globalProfileData = {};
+        
+        let isAdminMode = false;
+        let currentEditingUserId = null;
+        let tempSigImage = '';
+        let tempGalleryImage = '';
+        let tempBase64BannerImage = '';
+
+        function getLocalCache(key, fallback) {
+            try { 
+                const res = window.localStorage.getItem(key);
+                return res ? JSON.parse(res) : fallback;
+            } catch (e) { return fallback; }
+        }
+        function setLocalCache(key, val) {
+            try { window.localStorage.setItem(key, JSON.stringify(val)); } catch (e) {}
+        }
+
+        const getSiaDocRef = () => doc(db, 'artifacts', appId, 'public', 'data', 'siaProfile', 'mainData');
+
+        async function authenticate() {
+            try {
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+                return true;
+            } catch (err) {
+                console.warn("Offline fallback mode activated.", err.message);
+                return false;
+            }
+        }
+
+        async function loadAllData() {
+            const loadingInd = document.getElementById('loading-indicator');
+            if (loadingInd) loadingInd.classList.remove('hidden');
+
+            const isAuthed = await authenticate();
+            
+            if (isAuthed && navigator.onLine) {
+                try {
+                    const docRef = getSiaDocRef();
+                    const docSnap = await getDoc(docRef);
+                    
+                    if (docSnap.exists()) {
+                        const data = docSnap.data();
+                        globalHomeworkData = data.homework || defaultHomeworkData;
+                        globalNoticeData = data.notices || defaultNoticeData;
+                        globalSigData = data.sigpoongs || defaultSigData;
+                        globalGalleryData = data.gallery || defaultGalleryData;
+                        globalProfileData = data.profile || defaultProfileData;
+                    } else {
+                        await setDoc(docRef, {
+                            homework: defaultHomeworkData,
+                            notices: defaultNoticeData,
+                            sigpoongs: defaultSigData,
+                            gallery: defaultGalleryData,
+                            profile: defaultProfileData
+                        });
+                        globalHomeworkData = defaultHomeworkData;
+                        globalNoticeData = defaultNoticeData;
+                        globalSigData = defaultSigData;
+                        globalGalleryData = defaultGalleryData;
+                        globalProfileData = defaultProfileData;
+                    }
+                } catch (error) {
+                    useOfflineFallback();
+                }
+            } else {
+                useOfflineFallback();
+            }
+            if (loadingInd) loadingInd.classList.add('hidden');
+        }
+
+        function useOfflineFallback() {
+            globalHomeworkData = getLocalCache('siaHomeworkData', defaultHomeworkData);
+            globalNoticeData = getLocalCache('siaNoticeData', defaultNoticeData);
+            globalSigData = getLocalCache('siaSigData', defaultSigData);
+            globalGalleryData = getLocalCache('siaGalleryData', defaultGalleryData);
+            globalProfileData = getLocalCache('siaProfileData', defaultProfileData);
+        }
+
+        async function syncWithFirestore(key, payloadData) {
+            setLocalCache(`sia${key.charAt(0).toUpperCase() + key.slice(1)}Data`, payloadData);
+            
+            if (auth.currentUser && navigator.onLine) {
+                try { 
+                    const docRef = getSiaDocRef();
+                    await updateDoc(docRef, { [key]: payloadData }); 
+                } catch (error) { 
+                    console.warn("Firestore sync deferred:", error.message);
+                }
+            }
+        }
+
+        function triggerToast(txt) {
+            const toast = document.getElementById('toast-message');
+            const toastText = document.getElementById('toast-text');
+            if (!toast || !toastText) return;
+            
+            toastText.innerText = txt;
+            toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+            }, 3000);
+        }
+
+        function startAmbientParticles() {
+            const container = document.getElementById('ambient-bg-effects');
+            if (!container) return;
+            const symbols = ['🐰', '🩵', '🤍', '☁️', '✨', '🥕'];
+            
+            setInterval(() => {
+                const element = document.createElement('div');
+                element.className = 'sparkle-particle text-siaSky-300 select-none';
+                element.style.left = Math.random() * 100 + 'vw';
+                element.style.top = '-30px';
+                element.style.fontSize = Math.random() * (20 - 12) + 12 + 'px'; 
+                element.style.animationDuration = Math.random() * (12 - 6) + 6 + 's'; 
+                element.style.opacity = Math.random() * 0.7 + 0.2; 
+                element.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+                
+                container.appendChild(element);
+                setTimeout(() => { element.remove(); }, 12000);
+            }, 1200);
+        }
+
+        function computeDDay(type, targetDateStr) {
+            const today = new Date();
+            today.setHours(0,0,0,0);
+            
+            if (type === 'birthday') {
+                const cleared = targetDateStr.replace(/[^0-9]/g, '-');
+                const units = cleared.split('-');
+                if (units.length < 2) return "데이터 없음";
+                const m = parseInt(units[0], 10) - 1;
+                const d = parseInt(units[1], 10);
+                
+                let targetYr = today.getFullYear();
+                let eventDay = new Date(targetYr, m, d);
+                if (eventDay < today) {
+                    eventDay.setFullYear(targetYr + 1);
+                }
+                
+                const timeGap = eventDay - today;
+                const gapInDays = Math.ceil(timeGap / (1000 * 60 * 60 * 24));
+                if (gapInDays === 0) {
+                    return '<span class="text-siaSky-600 dark:text-siaSky-300 font-extrabold animate-bounce block text-xs">생일 축하해요! 🎂🐰</span>';
+                }
+                return `<span class="text-siaSky-600 dark:text-siaSky-300 font-black text-lg font-cute">D-${gapInDays}</span>`;
+            } else {
+                const cleared = targetDateStr.replace(/[^0-9]/g, '-');
+                const units = cleared.split('-').filter(p => p !== '');
+                if (units.length < 3) return "데이터 없음";
+                const anniversaryDay = new Date(units[0], parseInt(units[1], 10) - 1, units[2]);
+                
+                const timeGap = today - anniversaryDay;
+                const totalDays = Math.floor(timeGap / (1000 * 60 * 60 * 24)) + 1;
+                if (totalDays <= 0) return `<span class="text-slate-400 text-xs">D-Day 대기</span>`;
+                return `<span class="text-slate-900 dark:text-white font-black text-lg font-cute">${totalDays}일째 🐰</span>`;
+            }
+        }
+
+        function renderProfile() {
+            const banner = document.getElementById('profile-banner-img');
+            if (banner) {
+                banner.src = globalProfileData.bannerUrl || defaultProfileData.bannerUrl;
+                banner.style.display = 'block';
+            }
+
+            const introTextEl = document.getElementById('profile-intro-text');
+            if (introTextEl) introTextEl.textContent = globalProfileData.introText;
+            
+            const tagsCont = document.getElementById('profile-tags-container');
+            if (tagsCont) {
+                tagsCont.innerHTML = (globalProfileData.tags || []).map(t => `<span class="px-2.5 py-1 bg-siaSky-50 dark:bg-slate-800 text-siaSky-600 dark:text-siaSky-300 rounded-lg text-xs font-bold border border-siaSky-200/50 click-bounce">#${t.trim()}</span>`).join('');
+            }
+            
+            const ddayCont = document.getElementById('dday-container');
+            if (ddayCont) {
+                ddayCont.innerHTML = '';
+                const events = globalProfileData.ddays || defaultProfileData.ddays || [];
+                events.forEach(ev => {
+                    const scoreStr = computeDDay(ev.type, ev.date);
+                    ddayCont.innerHTML += `
+                        <div class="flex items-center justify-between p-3 bg-siaSky-50/50 dark:bg-slate-800/40 rounded-xl border border-siaSky-100 dark:border-slate-800">
+                            <div class="flex flex-col">
+                                <span class="text-xs font-extrabold text-slate-800 dark:text-slate-200">${ev.title}</span>
+                                <span class="text-[10px] text-slate-400 font-bold mt-0.5">${ev.date}</span>
+                            </div>
+                            <div class="text-right">${scoreStr}</div>
+                        </div>
+                    `;
+                });
+            }
+        }
+
+        function renderNotices() {
+            const container = document.getElementById('notices-list-container');
+            if (!container) return;
+            container.innerHTML = '';
+
+            if (globalNoticeData.length === 0) {
+                container.innerHTML = `<div class="text-center text-slate-400 text-xs py-8">등록된 공지사항이 없습니다.</div>`;
+                return;
+            }
+
+            globalNoticeData.forEach(not => {
+                const importantBadge = not.isImportant ? `<span class="px-2 py-0.5 bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 rounded-md text-[10px] font-black mr-2">중요</span>` : '';
+                const adminDelete = isAdminMode ? `<button onclick="deleteNotice('${not.id}')" class="text-slate-400 hover:text-red-500 text-xs ml-2"><i class="fa-solid fa-trash-can"></i></button>` : '';
+
+                container.innerHTML += `
+                    <div class="p-4 bg-siaSky-50/30 dark:bg-slate-800/30 border border-siaSky-100 dark:border-slate-800 rounded-2xl transition-all">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-extrabold text-sm text-slate-900 dark:text-white flex items-center">
+                                ${importantBadge}${not.title}
+                            </h3>
+                            <div class="flex items-center gap-2">
+                                <span class="text-[10px] text-slate-400 font-bold">${not.date}</span>
+                                ${adminDelete}
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed whitespace-pre-wrap">${not.content}</p>
+                    </div>
+                `;
+            });
+        }
+
+        function renderSigpoongs() {
+            const grid = document.getElementById('sigpoong-grid');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            globalSigData.forEach(sig => {
+                const adminDelete = isAdminMode ? `<button onclick="deleteSig('${sig.id}')" class="text-slate-400 hover:text-red-500 text-xs absolute top-3 right-3 z-10"><i class="fa-solid fa-trash-can"></i></button>` : '';
+
+                const imgHtml = sig.image ? `
+                    <div class="w-full h-32 mb-3 rounded-xl png-transparent-bg flex items-center justify-center overflow-hidden border border-siaSky-200/50">
+                        <img src="${sig.image}" class="h-full object-contain hover:scale-105 transition-transform">
+                    </div>
+                ` : '';
+
+                grid.innerHTML += `
+                    <div class="bg-siaSky-50/40 dark:bg-slate-800/40 border border-siaSky-200/60 dark:border-slate-700 rounded-2xl p-4 relative click-bounce flex flex-col justify-between">
+                        ${adminDelete}
+                        <div>
+                            ${imgHtml}
+                            <div class="inline-block bg-siaSky text-white font-cute font-black text-xs px-3 py-1 rounded-full mb-2">
+                                🎈 ${sig.count}개
+                            </div>
+                            <h4 class="font-black text-sm text-slate-900 dark:text-white mb-1 font-cute">${sig.title}</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">${sig.desc}</p>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function renderGallery() {
+            const grid = document.getElementById('gallery-grid');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            if (globalGalleryData.length === 0) {
+                grid.innerHTML = `<div class="col-span-full py-10 text-center text-slate-400 text-xs font-bold">등록된 이달의 방셀이 없습니다.</div>`;
+                return;
+            }
+
+            globalGalleryData.forEach(item => {
+                const adminDelete = isAdminMode ? `<button onclick="deleteGallery('${item.id}')" class="text-slate-400 hover:text-red-500 text-xs absolute top-3 right-3 z-10 bg-white/80 dark:bg-slate-900/80 p-1.5 rounded-full"><i class="fa-solid fa-trash-can"></i></button>` : '';
+
+                grid.innerHTML += `
+                    <div class="bg-siaSky-50/20 dark:bg-slate-800/20 border border-siaSky-200/40 dark:border-slate-700/50 rounded-2xl p-4 relative flex flex-col justify-between click-bounce">
+                        ${adminDelete}
+                        <div class="w-full h-52 mb-3 rounded-xl bg-transparent flex items-center justify-center overflow-hidden">
+                            <img src="${item.image}" class="max-h-full max-w-full object-contain hover:scale-105 transition-transform" alt="${item.title}">
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-sm text-slate-900 dark:text-white font-cute mb-1">${item.title}</h4>
+                            <p class="text-[11px] text-siaSky-600 dark:text-siaSky-300 font-bold">${item.target || '모든 몽글이용'}</p>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function getSpecificAvatarUrl(userObj) {
+            if (userObj.id && userObj.id.trim() !== '') {
+                const rootPart = userObj.id.substring(0, 2);
+                return `https://stimg.afreecatv.com/LOGO/${rootPart}/${userObj.id}/${userObj.id}.jpg`;
+            }
+            return `https://placehold.co/100x100/BAE0FD/0F4882?text=${encodeURIComponent(userObj.nickname)}`;
+        }
+
+        function renderHomework(data) {
+            const grid = document.getElementById('homework-grid');
+            if (!grid) return;
+            grid.innerHTML = '';
+            
+            if (data.length === 0) { 
+                grid.innerHTML = '<div class="col-span-full py-12 text-center text-slate-400 text-xs font-bold">몽실이 업보판 항목이 비어있습니다.</div>'; 
+                return; 
+            }
+
+            data.forEach(user => {
+                const aggregate = (user.items || []).length;
+                const av = getSpecificAvatarUrl(user);
+                
+                const block = document.createElement('div');
+                block.className = 'bg-white dark:bg-[#0F172A] border border-siaSky-200/70 dark:border-slate-800 rounded-2xl p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-siaSky-50/50 transition-all shadow-sm relative group click-bounce';
+                block.onclick = () => { if (isAdminMode) openHomeworkEditModal(user, av); else openHomeworkDetailPopup(user, av); };
+                
+                const adminIndicator = isAdminMode ? `<div class="absolute top-2 right-2 text-slate-400 group-hover:text-siaSky transition-colors"><i class="fa-solid fa-user-pen text-xs"></i></div>` : '';
+
+                block.innerHTML = `
+                    ${adminIndicator}
+                    <img src="${av}" onerror="this.src='https://placehold.co/100x100/BAE0FD/0F4882?text=SIA'" alt="${user.nickname}" class="w-14 h-14 rounded-full object-cover mb-2.5 shadow-xs border border-siaSky-200">
+                    <div class="text-slate-900 dark:text-slate-100 font-extrabold text-xs mb-2 truncate w-full text-center font-cute">${user.nickname}</div>
+                    <div class="bg-siaSky-100 text-siaSky-600 dark:bg-siaSky-900/30 dark:text-siaSky-300 text-[11px] font-black px-2.5 py-0.5 rounded-full">항목 ${aggregate}개</div>
+                `;
+                grid.appendChild(block);
+            });
+        }
+
+        function openHomeworkDetailPopup(user, av) {
+            let container = document.getElementById('homework-detail-popup');
+            if (!container) {
+                container = document.createElement('div'); 
+                container.id = 'homework-detail-popup'; 
+                container.className = 'fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300';
+                document.body.appendChild(container);
+            }
+            
+            const recordsHtml = (user.items || []).length > 0 ? user.items.map(rec => {
+                const badgeStatus = rec.count === 0 ? 'bg-emerald-500 text-white' : 'bg-siaSky text-white';
+                const statusTxt = rec.count === 0 ? '완료 ✨' : '대기 🕒';
+                
+                return `
+                    <div class="flex justify-between items-center bg-siaSky-50/50 dark:bg-slate-800 border border-siaSky-100 dark:border-slate-700 rounded-xl p-3 mb-2 text-xs font-bold">
+                        <span class="text-slate-800 dark:text-slate-200">${rec.name}</span>
+                        <span class="${badgeStatus} px-2.5 py-0.5 rounded-lg text-[9px] font-black">${statusTxt}</span>
+                    </div>
+                `;
+            }).join('') : `<div class="text-center text-slate-400 py-6 text-xs font-bold">모든 업보/방셀 항목이 완료되었습니다! 🐰🩵</div>`;
+
+            container.innerHTML = `
+                <div class="bg-white dark:bg-[#0F172A] rounded-2xl shadow-2xl w-11/12 max-w-sm overflow-hidden transform scale-95 transition-all duration-300 border border-siaSky-200 dark:border-slate-700">
+                    <div class="p-4 flex items-center justify-between border-b border-siaSky-100 dark:border-slate-800 bg-siaSky-50/40">
+                        <div class="flex items-center gap-2.5">
+                            <img src="${av}" onerror="this.src='https://placehold.co/100x100/BAE0FD/0F4882?text=SIA'" class="w-9 h-9 rounded-full border border-siaSky-200 object-cover">
+                            <div>
+                                <div class="text-slate-900 dark:text-white font-extrabold text-xs font-cute">${user.nickname} 몽글이 🩵</div>
+                                <div class="text-slate-400 text-[10px]">(${user.id || 'SOOP ID 미지정'})</div>
+                            </div>
+                        </div>
+                        <button onclick="closeHomeworkDetailPopup()" class="text-slate-400 hover:text-white p-2"><i class="fa-solid fa-xmark text-lg"></i></button>
+                    </div>
+                    <div class="p-4 max-h-60 overflow-y-auto">${recordsHtml}</div>
+                </div>
+            `;
+            
+            requestAnimationFrame(() => { 
+                container.classList.remove('opacity-0', 'pointer-events-none'); 
+                container.querySelector('div').classList.remove('scale-95'); 
+                container.querySelector('div').classList.add('scale-100'); 
+            });
+            container.addEventListener('click', (e) => { if (e.target === container) closeHomeworkDetailPopup(); });
+        }
+
+        function closeHomeworkDetailPopup() {
+            const pop = document.getElementById('homework-detail-popup');
+            if (pop) { 
+                pop.classList.add('opacity-0', 'pointer-events-none'); 
+                pop.querySelector('div').classList.remove('scale-100'); 
+                pop.querySelector('div').classList.add('scale-95'); 
+            }
+        }
+
+        // Admin Auth Code: 121412
+        function openAdminLoginModal() {
+            if (isAdminMode) {
+                isAdminMode = false;
+                toggleAdminUI(false);
+                triggerToast("관리자 모드가 해제되었습니다.");
+                return;
+            }
+            const popup = document.getElementById('admin-login-modal');
+            requestAnimationFrame(() => { 
+                popup.classList.remove('opacity-0', 'pointer-events-none'); 
+                popup.querySelector('div').classList.remove('scale-95'); 
+                popup.querySelector('div').classList.add('scale-100'); 
+            });
+            document.getElementById('admin-pin').value = ''; 
+            document.getElementById('admin-pin').focus();
+        }
+
+        function closeAdminLoginModal() {
+            const popup = document.getElementById('admin-login-modal');
+            popup.classList.add('opacity-0', 'pointer-events-none'); 
+            popup.querySelector('div').classList.remove('scale-100'); 
+            popup.querySelector('div').classList.add('scale-95'); 
+        }
+
+        function checkAdminPin() {
+            const pinVal = document.getElementById('admin-pin').value;
+            if (pinVal === '121412') { 
+                isAdminMode = true; 
+                closeAdminLoginModal();
+                toggleAdminUI(true);
+                triggerToast("관리자 인증 완료! 시아 편집 모드 활성화 🐰🩵");
+            } else {
+                const targetBox = document.getElementById('admin-pin');
+                targetBox.classList.add('border-red-500', 'animate-pulse'); 
+                targetBox.value = ''; 
+                targetBox.placeholder = '비밀번호 오류!';
+                setTimeout(() => { 
+                    targetBox.classList.remove('border-red-500', 'animate-pulse'); 
+                    targetBox.placeholder = '••••••'; 
+                }, 1800);
+            }
+        }
+
+        function toggleAdminUI(enable) {
+            const btns = [
+                'admin-add-user-btn', 'admin-add-notice-btn', 
+                'admin-add-sig-btn', 'admin-add-gallery-btn', 'admin-profile-edit-btn'
+            ];
+            btns.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    if (enable) el.classList.remove('hidden');
+                    else el.classList.add('hidden');
+                }
+            });
+
+            const statusText = document.getElementById('admin-status-text');
+            if (statusText) {
+                statusText.innerText = enable ? '관리자 해제' : '관리자 인증';
+            }
+
+            renderNotices();
+            renderSigpoongs();
+            renderGallery();
+            renderHomework(globalHomeworkData);
+        }
+
+        // Image Reader for PNG/JPG Direct File Selection
+        function readFileAsBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = error => reject(error);
+            });
+        }
+
+        // Direct File selection handler for Banner (No file size limit - Requirement #2)
+        async function handleBannerFileSelection(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            try {
+                tempBase64BannerImage = await readFileAsBase64(file);
+                document.getElementById('banner-upload-preview').src = tempBase64BannerImage;
+                document.getElementById('banner-upload-preview-container').classList.remove('hidden');
+                triggerToast("배너 파일이 업로드되었습니다!");
+            } catch (e) {
+                triggerToast("파일 로드 오류.");
+            }
+        }
+        function clearSelectedBannerFile() {
+            document.getElementById('profile-banner-file').value = '';
+            tempBase64BannerImage = '';
+            document.getElementById('banner-upload-preview-container').classList.add('hidden');
+        }
+
+        // Handlers for Sigpoong Image
+        async function handleSigImageSelection(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            try {
+                tempSigImage = await readFileAsBase64(file);
+                document.getElementById('sig-img-preview').src = tempSigImage;
+                document.getElementById('sig-img-preview-container').classList.remove('hidden');
+            } catch (e) {
+                triggerToast("이미지 로드 실패.");
+            }
+        }
+        function clearSigImage() {
+            document.getElementById('sig-image-file').value = '';
+            tempSigImage = '';
+            document.getElementById('sig-img-preview-container').classList.add('hidden');
+        }
+
+        // Handlers for Gallery Image
+        async function handleGalleryImageSelection(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            try {
+                tempGalleryImage = await readFileAsBase64(file);
+                document.getElementById('gallery-img-preview').src = tempGalleryImage;
+                document.getElementById('gallery-img-preview-container').classList.remove('hidden');
+            } catch (e) {
+                triggerToast("이미지 로드 실패.");
+            }
+        }
+        function clearGalleryImage() {
+            document.getElementById('gallery-image-file').value = '';
+            tempGalleryImage = '';
+            document.getElementById('gallery-img-preview-container').classList.add('hidden');
+        }
+
+        // Modals
+        function openNoticeModal() {
+            const modal = document.getElementById('notice-modal');
+            document.getElementById('notice-title').value = '';
+            document.getElementById('notice-content').value = '';
+            document.getElementById('notice-important').checked = false;
+            requestAnimationFrame(() => { 
+                modal.classList.remove('opacity-0', 'pointer-events-none'); 
+                modal.querySelector('div').classList.remove('scale-95'); 
+                modal.querySelector('div').classList.add('scale-100'); 
+            });
+        }
+        function closeNoticeModal() {
+            const modal = document.getElementById('notice-modal');
+            modal.classList.add('opacity-0', 'pointer-events-none'); 
+            modal.querySelector('div').classList.remove('scale-100'); 
+            modal.querySelector('div').classList.add('scale-95'); 
+        }
+        function submitNotice() {
+            const title = document.getElementById('notice-title').value.trim();
+            const content = document.getElementById('notice-content').value.trim();
+            const isImportant = document.getElementById('notice-important').checked;
+            if (!title || !content) { triggerToast("제목과 내용을 입력해주세요."); return; }
+            
+            const now = new Date();
+            const dateStr = `${now.getFullYear()}.${String(now.getMonth()+1).padStart(2,'0')}.${String(now.getDate()).padStart(2,'0')}`;
+            globalNoticeData.unshift({ id: 'not_' + Date.now(), title, content, isImportant, date: dateStr });
+            syncWithFirestore('notices', globalNoticeData);
+            renderNotices();
+            closeNoticeModal();
+            triggerToast("공지사항이 등록되었습니다 📢");
+        }
+        window.deleteNotice = function(id) {
+            globalNoticeData = globalNoticeData.filter(n => n.id !== id);
+            syncWithFirestore('notices', globalNoticeData);
+            renderNotices();
+            triggerToast("공지가 삭제되었습니다.");
+        };
+
+        function openSigModal() {
+            const modal = document.getElementById('sig-modal');
+            document.getElementById('sig-count').value = '';
+            document.getElementById('sig-title').value = '';
+            document.getElementById('sig-desc').value = '';
+            clearSigImage();
+            requestAnimationFrame(() => { 
+                modal.classList.remove('opacity-0', 'pointer-events-none'); 
+                modal.querySelector('div').classList.remove('scale-95'); 
+                modal.querySelector('div').classList.add('scale-100'); 
+            });
+        }
+        function closeSigModal() {
+            const modal = document.getElementById('sig-modal');
+            modal.classList.add('opacity-0', 'pointer-events-none'); 
+            modal.querySelector('div').classList.remove('scale-100'); 
+            modal.querySelector('div').classList.add('scale-95'); 
+        }
+        function submitSig() {
+            const count = document.getElementById('sig-count').value;
+            const title = document.getElementById('sig-title').value.trim();
+            const desc = document.getElementById('sig-desc').value.trim();
+            if (!count || !title) { triggerToast("풍선 개수와 제목을 입력해주세요."); return; }
+
+            globalSigData.push({ id: 'sig_' + Date.now(), count: parseInt(count, 10), title, desc, image: tempSigImage });
+            globalSigData.sort((a,b) => a.count - b.count);
+            syncWithFirestore('sigpoongs', globalSigData);
+            renderSigpoongs();
+            closeSigModal();
+            triggerToast("시그풍이 추가되었습니다 🎈");
+        }
+        window.deleteSig = function(id) {
+            globalSigData = globalSigData.filter(s => s.id !== id);
+            syncWithFirestore('sigpoongs', globalSigData);
+            renderSigpoongs();
+            triggerToast("시그풍이 삭제되었습니다.");
+        };
+
+        function openGalleryModal() {
+            const modal = document.getElementById('gallery-modal');
+            document.getElementById('gallery-title').value = '';
+            document.getElementById('gallery-target').value = '';
+            clearGalleryImage();
+            requestAnimationFrame(() => { 
+                modal.classList.remove('opacity-0', 'pointer-events-none'); 
+                modal.querySelector('div').classList.remove('scale-95'); 
+                modal.querySelector('div').classList.add('scale-100'); 
+            });
+        }
+        function closeGalleryModal() {
+            const modal = document.getElementById('gallery-modal');
+            modal.classList.add('opacity-0', 'pointer-events-none'); 
+            modal.querySelector('div').classList.remove('scale-100'); 
+            modal.querySelector('div').classList.add('scale-95'); 
+        }
+        function submitGallery() {
+            const title = document.getElementById('gallery-title').value.trim();
+            const target = document.getElementById('gallery-target').value.trim();
+            if (!title || !tempGalleryImage) { triggerToast("제목과 이미지를 선택해 주세요!"); return; }
+
+            globalGalleryData.unshift({ id: 'gal_' + Date.now(), title, target, image: tempGalleryImage });
+            syncWithFirestore('gallery', globalGalleryData);
+            renderGallery();
+            closeGalleryModal();
+            triggerToast("방셀이 갤러리에 추가되었습니다 🖼️");
+        }
+        window.deleteGallery = function(id) {
+            globalGalleryData = globalGalleryData.filter(g => g.id !== id);
+            syncWithFirestore('gallery', globalGalleryData);
+            renderGallery();
+            triggerToast("방셀 이미지가 삭제되었습니다.");
+        };
+
+        function openAddUserModal() {
+            const modal = document.getElementById('add-user-modal');
+            document.getElementById('new-user-id').value = '';
+            document.getElementById('new-user-nickname').value = '';
+            requestAnimationFrame(() => { 
+                modal.classList.remove('opacity-0', 'pointer-events-none'); 
+                modal.querySelector('div').classList.remove('scale-95'); 
+                modal.querySelector('div').classList.add('scale-100'); 
+            });
+        }
+        function closeAddUserModal() {
+            const modal = document.getElementById('add-user-modal');
+            modal.classList.add('opacity-0', 'pointer-events-none'); 
+            modal.querySelector('div').classList.remove('scale-100'); 
+            modal.querySelector('div').classList.add('scale-95'); 
+        }
+        function submitNewUser() {
+            const id = document.getElementById('new-user-id').value.trim();
+            const nickname = document.getElementById('new-user-nickname').value.trim();
+            if (!nickname) { triggerToast("닉네임을 입력하세요."); return; }
+
+            globalHomeworkData.unshift({ id, nickname, items: [] });
+            syncWithFirestore('homework', globalHomeworkData);
+            renderHomework(globalHomeworkData);
+            closeAddUserModal();
+            triggerToast(`몽실이 명부에 "${nickname}" 님이 등록되었습니다 🩵`);
+        }
+
+        function openHomeworkEditModal(user, av) {
+            currentEditingUserId = user.id || user.nickname; 
+            const popup = document.getElementById('homework-edit-modal');
+            
+            document.getElementById('edit-modal-header').innerHTML = `
+                <img src="${av}" onerror="this.src='https://placehold.co/100x100/BAE0FD/0F4882?text=SIA'" class="w-10 h-10 rounded-full border border-siaSky-200 object-cover">
+                <div>
+                    <div class="text-slate-900 dark:text-white font-extrabold text-xs font-cute">
+                        ${user.nickname} 몽글이
+                        <span class="text-[9px] bg-siaSky text-white font-black px-1.5 py-0.5 rounded ml-1">수정</span>
+                    </div>
+                </div>
+            `;
+            
+            const btn = document.getElementById('delete-user-confirm-btn');
+            if (btn) {
+                btn.classList.remove('hidden');
+                btn.onclick = () => {
+                    globalHomeworkData = globalHomeworkData.filter(u => (u.id || u.nickname) !== currentEditingUserId);
+                    syncWithFirestore('homework', globalHomeworkData);
+                    closeHomeworkEditModal();
+                    renderHomework(globalHomeworkData);
+                    triggerToast("명부에서 제외되었습니다.");
+                };
+            }
+
+            renderEditItems();
+            requestAnimationFrame(() => { 
+                popup.classList.remove('opacity-0', 'pointer-events-none'); 
+                popup.querySelector('div').classList.remove('scale-95'); 
+                popup.querySelector('div').classList.add('scale-100'); 
+            });
+        }
+        function closeHomeworkEditModal() {
+            const popup = document.getElementById('homework-edit-modal'); 
+            popup.classList.add('opacity-0', 'pointer-events-none'); 
+            popup.querySelector('div').classList.remove('scale-100'); 
+            popup.querySelector('div').classList.add('scale-95'); 
+        }
+        function renderEditItems() {
+            const user = globalHomeworkData.find(u => (u.id || u.nickname) === currentEditingUserId); 
+            if (!user) return;
+            const body = document.getElementById('edit-modal-body');
+            
+            if (user.items.length === 0) { 
+                body.innerHTML = `<div class="text-center text-slate-400 py-6 text-xs font-bold">등록된 업보 항목이 없습니다.</div>`; 
+                return; 
+            }
+            body.innerHTML = user.items.map((item, index) => {
+                const doneChecked = item.count === 0 ? 'checked' : '';
+                return `
+                    <div class="flex justify-between items-center bg-siaSky-50/50 dark:bg-slate-800 border border-siaSky-100 dark:border-slate-700 rounded-xl p-3 mb-2 font-bold text-xs">
+                        <span class="text-slate-800 dark:text-slate-200">${item.name}</span>
+                        <div class="flex items-center gap-2">
+                            <label class="flex items-center gap-1 text-[11px] text-slate-500 cursor-pointer">
+                                <input type="checkbox" onchange="toggleHomeworkState(${index}, this.checked)" ${doneChecked} class="w-3.5 h-3.5 rounded">완료
+                            </label>
+                            <button onclick="deleteItem(${index})" class="ml-2 text-slate-400 hover:text-red-500"><i class="fa-solid fa-trash-can text-xs"></i></button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+        window.toggleHomeworkState = function(index, isDone) {
+            const user = globalHomeworkData.find(u => (u.id || u.nickname) === currentEditingUserId); 
+            if (!user) return;
+            user.items[index].count = isDone ? 0 : 1;
+            syncWithFirestore('homework', globalHomeworkData);
+            renderEditItems();
+            renderHomework(globalHomeworkData);
+        };
+        window.deleteItem = function(index) {
+            const user = globalHomeworkData.find(u => (u.id || u.nickname) === currentEditingUserId); 
+            if (!user) return;
+            user.items.splice(index, 1);
+            syncWithFirestore('homework', globalHomeworkData);
+            renderEditItems();
+            renderHomework(globalHomeworkData);
+        };
+        window.addNewItem = function() {
+            const textNode = document.getElementById('new-item-name');
+            const nVal = textNode.value.trim();
+            if (!nVal) return;
+            let user = globalHomeworkData.find(u => (u.id || u.nickname) === currentEditingUserId);
+            if (!user) return;
+            user.items.push({ name: nVal, count: 1 });
+            textNode.value = '';
+            syncWithFirestore('homework', globalHomeworkData);
+            renderEditItems();
+            renderHomework(globalHomeworkData);
+            triggerToast("새 항목이 추가되었습니다 🩵");
+        };
+
+        function openProfileEditModal() {
+            const modal = document.getElementById('profile-edit-modal');
+            tempBase64BannerImage = globalProfileData.bannerUrl || '';
+            if (tempBase64BannerImage) {
+                document.getElementById('banner-upload-preview').src = tempBase64BannerImage;
+                document.getElementById('banner-upload-preview-container').classList.remove('hidden');
+            }
+            document.getElementById('edit-profile-intro').value = globalProfileData.introText || '';
+            document.getElementById('edit-profile-tags').value = (globalProfileData.tags || []).join(', ');
+            renderEditDdays();
+
+            requestAnimationFrame(() => { 
+                modal.classList.remove('opacity-0', 'pointer-events-none'); 
+                modal.querySelector('div').classList.remove('scale-95'); 
+                modal.querySelector('div').classList.add('scale-100'); 
+            });
+        }
+        function closeProfileEditModal() {
+            const modal = document.getElementById('profile-edit-modal');
+            modal.classList.add('opacity-0', 'pointer-events-none'); 
+            modal.querySelector('div').classList.remove('scale-100'); 
+            modal.querySelector('div').classList.add('scale-95'); 
+        }
+        function renderEditDdays() {
+            const list = document.getElementById('edit-dday-list');
+            if (!list) return;
+            list.innerHTML = '';
+            const events = globalProfileData.ddays || defaultProfileData.ddays || [];
+            events.forEach((ev, index) => {
+                list.innerHTML += `
+                    <div class="flex items-center gap-2 bg-siaSky-50/50 dark:bg-slate-800 p-2 rounded-xl border border-siaSky-100 font-bold">
+                        <input type="text" id="edit-dday-title-${index}" value="${ev.title}" class="w-1/3 bg-white dark:bg-slate-900 border rounded-lg p-1.5 text-xs">
+                        <select id="edit-dday-type-${index}" class="w-1/4 bg-white dark:bg-slate-900 border rounded-lg p-1.5 text-xs">
+                            <option value="birthday" ${ev.type === 'birthday' ? 'selected' : ''}>생일</option>
+                            <option value="anniversary" ${ev.type === 'anniversary' ? 'selected' : ''}>기념일</option>
+                        </select>
+                        <input type="text" id="edit-dday-date-${index}" value="${ev.date}" class="w-1/4 bg-white dark:bg-slate-900 border rounded-lg p-1.5 text-xs">
+                        <button type="button" onclick="deleteEditDdayRow(${index})" class="text-slate-400 hover:text-red-500 p-1 text-sm"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+                `;
+            });
+        }
+        window.addEditDdayRow = function() {
+            if (!globalProfileData.ddays) globalProfileData.ddays = [];
+            globalProfileData.ddays.push({ title: "새 일정", type: "anniversary", date: "2025-12-03" });
+            renderEditDdays();
+        };
+        window.deleteEditDdayRow = function(index) {
+            if (!globalProfileData.ddays) return;
+            globalProfileData.ddays.splice(index, 1);
+            renderEditDdays();
+        };
+        function saveProfileChanges() {
+            const urlInputBanner = document.getElementById('edit-profile-banner-url').value.trim();
+            globalProfileData.bannerUrl = tempBase64BannerImage || urlInputBanner || defaultProfileData.bannerUrl;
+            globalProfileData.introText = document.getElementById('edit-profile-intro').value; 
+            globalProfileData.tags = document.getElementById('edit-profile-tags').value.split(',').map(s=>s.trim()).filter(Boolean);
+
+            const count = (globalProfileData.ddays || []).length;
+            const updatedEvents = [];
+            for (let i = 0; i < count; i++) {
+                const titleEl = document.getElementById(`edit-dday-title-${i}`);
+                if (!titleEl) continue;
+                const title = titleEl.value.trim();
+                const type = document.getElementById(`edit-dday-type-${i}`).value;
+                const date = document.getElementById(`edit-dday-date-${i}`).value.trim();
+                if (title && date) updatedEvents.push({ title, type, date });
+            }
+            globalProfileData.ddays = updatedEvents;
+
+            syncWithFirestore('profile', globalProfileData); 
+            renderProfile(); 
+            closeProfileEditModal();
+            triggerToast("프로필 수정 완료 🐰🩵");
+        }
+
+        // Init
+        document.addEventListener('DOMContentLoaded', async () => {
+            startAmbientParticles();
+
+            const themeBtns = [document.getElementById('theme-toggle'), document.getElementById('mobile-theme-toggle')];
+            const rootEl = document.documentElement;
+            let currentTheme = 'light';
+            try { currentTheme = window.localStorage.getItem('theme'); } catch(e) {}
+            if (currentTheme === 'dark' || (!currentTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                rootEl.classList.add('dark');
+            } else {
+                rootEl.classList.remove('dark');
+            }
+            
+            themeBtns.forEach(btn => {
+                if (btn) {
+                    btn.addEventListener('click', () => {
+                        rootEl.classList.toggle('dark');
+                        const darkNow = rootEl.classList.contains('dark');
+                        try { window.localStorage.setItem('theme', darkNow ? 'dark' : 'light'); } catch(e) {}
+                    });
+                }
+            });
+
+            const mobMenuTrigger = document.getElementById('mobile-menu-btn');
+            if (mobMenuTrigger) {
+                mobMenuTrigger.addEventListener('click', () => {
+                    document.getElementById('mobile-menu').classList.toggle('hidden');
+                });
+            }
+            document.querySelectorAll('#mobile-menu a').forEach(tag => {
+                tag.addEventListener('click', () => document.getElementById('mobile-menu').classList.add('hidden'));
+            });
+
+            const dateSpan = document.getElementById('homework-sync-date');
+            if (dateSpan) {
+                const now = new Date();
+                dateSpan.innerText = `${now.getFullYear()}.${String(now.getMonth() + 1).padStart(2,'0')}.${String(now.getDate()).padStart(2,'0')}`;
+            }
+
+            const searchInput = document.getElementById('homework-search');
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const word = e.target.value.toLowerCase();
+                    const filtered = globalHomeworkData.filter(u => u.nickname.toLowerCase().includes(word) || u.id.toLowerCase().includes(word));
+                    renderHomework(filtered);
+                });
+            }
+
+            await loadAllData();
+            
+            renderProfile();
+            renderNotices();
+            renderSigpoongs();
+            renderGallery();
+            renderHomework(globalHomeworkData);
+        });
+
+        // Global functions binding
+        window.openProfileEditModal = openProfileEditModal;
+        window.closeProfileEditModal = closeProfileEditModal;
+        window.saveProfileChanges = saveProfileChanges;
+        window.openHomeworkEditModal = openHomeworkEditModal;
+        window.closeHomeworkEditModal = closeHomeworkEditModal;
+        window.openAdminLoginModal = openAdminLoginModal;
+        window.closeAdminLoginModal = closeAdminLoginModal;
+        window.checkAdminPin = checkAdminPin;
+        window.addNewItem = addNewItem;
+        window.openAddUserModal = openAddUserModal;
+        window.closeAddUserModal = closeAddUserModal;
+        window.submitNewUser = submitNewUser;
+        window.closeHomeworkDetailPopup = closeHomeworkDetailPopup;
+        window.handleBannerFileSelection = handleBannerFileSelection;
+        window.clearSelectedBannerFile = clearSelectedBannerFile;
+        window.openNoticeModal = openNoticeModal;
+        window.closeNoticeModal = closeNoticeModal;
+        window.submitNotice = submitNotice;
+        window.openSigModal = openSigModal;
+        window.closeSigModal = closeSigModal;
+        window.submitSig = submitSig;
+        window.handleSigImageSelection = handleSigImageSelection;
+        window.clearSigImage = clearSigImage;
+        window.openGalleryModal = openGalleryModal;
+        window.closeGalleryModal = closeGalleryModal;
+        window.submitGallery = submitGallery;
+        window.handleGalleryImageSelection = handleGalleryImageSelection;
+        window.clearGalleryImage = clearGalleryImage;
+    </script>
+</body>
+</html>
